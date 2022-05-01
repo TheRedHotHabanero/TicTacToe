@@ -1,0 +1,86 @@
+
+% "Крестики-нолики"
+
+\documentclass[a5paper,10pt, twoside]{article} % тип документа
+
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{import}
+
+% Математика
+
+\import{headers/}{math.tex}
+
+%  Русский язык
+
+\import{headers/}{russian.tex}
+
+% Дефайны
+
+\import{headers/}{my_defs.tex}
+
+%\fancyhf{}
+\renewcommand{\footrulewidth}{ .0em }
+\fancyfoot[C]{\texttt{\textemdash~\thepage~\textemdash}}
+\fancyhead[L]{Tic-Tac-Toe}
+\fancyhead[R]{}
+
+\pagestyle{fancy}
+
+\graphicspath{{src/pics/}} % где лежат картинки
+
+\counterwithin{figure}{section}
+
+% Title Page
+\title
+{
+\hfill \break	\hfill \break
+\hfill \break	\hfill \break
+Попытка сделать что-то приличное
+
+ОПИСАНИЕ ИГРЫ КРЕСТИКИ-НОЛИКИ
+}
+\author{Лирисман Карина, Б01-001}
+
+%\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+\maketitle
+
+
+\thispagestyle{empty} % выключаем отображение номера для этой страницы
+
+\newpage
+
+\tableofcontents % Вывод содержания
+\thispagestyle{plain}
+\newpage
+
+
+\section{Подготовительный этап работы}
+
+  \subsection{Формулировка основных требований к игре}
+  \import{src/}{1_req.tex}
+
+  \subsection{Описание протокола игры}
+  \import{src/}{2_protocol.tex}
+
+  \subsection{Описание состояния игры}
+  \import{src/}{3_cond.tex}
+  
+   \subsection{Уточнение протоколов деталями изменения состояния}
+  \import{src/}{4_change.tex}
+
+
+
+\section{Формализация}
+
+	\subsection{Формализация структурной спецификации}
+
+	\subsection{Формализация протоколов взаимодействия}
+
+
+\section{Реализация}
+
+\end{document}
